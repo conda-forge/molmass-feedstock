@@ -1,5 +1,5 @@
 {% set name = "molmass" %}
-{% set version = "2024.5.10" %}
+{% set version = "2024.5.24" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cgohlke/molmass/archive/v{{ version }}.tar.gz
-  sha256: 398da89ceadab65140016a459165f242e2af615aea39bb9c87d2820f84cec6cb
+  sha256: 76aad8ba775df1105bd7bed3038ef87c72740d90d6d16343c9532911319c9577
 
 build:
   number: 0
