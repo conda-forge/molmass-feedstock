@@ -10,7 +10,7 @@ source:
   sha256: bcdfd7c6dce0561ab6c4ec3455f26b4e7304dbcabd61f49e60376a5cd41806dd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
   entry_points:
@@ -21,12 +21,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - molmass
 
@@ -40,11 +42,13 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage('molmass', exact=True) }}
         - flask
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - molmass.web
 
@@ -53,11 +57,13 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage('molmass', exact=True) }}
         - wxpython >=4.0
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - molmass.elements_gui
 
