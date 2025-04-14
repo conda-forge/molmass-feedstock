@@ -1,5 +1,6 @@
 {% set name = "molmass" %}
 {% set version = "2025.4.14" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -45,6 +46,7 @@ outputs:
         - python {{ python_min }}
       run:
         - {{ pin_subpackage('molmass', exact=True) }}
+        - python >={{ python_min }}
         - flask
     test:
       requires:
@@ -61,6 +63,7 @@ outputs:
       run:
         - {{ pin_subpackage('molmass', exact=True) }}
         - wxpython >=4.0
+        - python >={{ python_min }}
     test:
       requires:
         - python {{ python_min }}
