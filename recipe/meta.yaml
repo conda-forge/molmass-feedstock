@@ -1,5 +1,5 @@
 {% set name = "molmass" %}
-{% set version = "2025.12.12" %}
+{% set version = "2026.1.8" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/cgohlke/molmass/archive/v{{ version }}.tar.gz
-  sha256: dc7cf05a49276a36ad076cd82fa1ee21272b5e9a17199feb0594daaf5145b3a1
+  sha256: ac5dadf90887c59e8100afee560960b708a19fb7e154fa1bfb5dc63297575750
 
 build:
   number: 0
