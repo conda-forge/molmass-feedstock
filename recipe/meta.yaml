@@ -1,6 +1,6 @@
 {% set name = "molmass" %}
 {% set version = "2026.6.9" %}
-{% set python_min = "3.11" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -37,6 +37,18 @@ outputs:
   - name: {{ name|lower }}
     build:
       noarch: python
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools
+      run:
+        - python >={{ python_min }}
+    test:
+      requires:
+        - python {{ python_min }}
+      imports:
+        - molmass
 
   - name: {{ name|lower }}-web
     build:
