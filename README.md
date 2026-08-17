@@ -49,31 +49,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `molmass, molmass-elements-gui, molmass-web` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install molmass molmass-elements-gui molmass-web
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install molmass molmass-elements-gui molmass-web
 ```
 
-It is possible to list all of the versions of `molmass` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add molmass molmass-elements-gui molmass-web
+# for installing globally
+pixi global install molmass molmass-elements-gui molmass-web
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `molmass` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search molmass --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search molmass --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search molmass --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -85,6 +127,8 @@ mamba repoquery whoneeds molmass --channel conda-forge
 # List dependencies of `molmass`:
 mamba repoquery depends molmass --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
